@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/js/uikit.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.3.6/css/uikit.min.css" integrity="sha256-P21Ubll6jATiBZ6SPPZLB4/5WEasygQTQoB3ak+txpg=" crossorigin="anonymous" />
+</head>
+<body>
+	<nav class="uk-navbar-container" uk-navbar>
+		<div class="uk-navbar-left">
+
+			<ul class="uk-navbar-nav">
+				<li class="uk-active"><a href="{% url 'index' %}">Home</a></li>
+			</ul>
+
+		</div>
+	</nav>
+
+	<div class="uk-container uk-container-small">
+		{% block content_one %}
+
+		{% endblock %}
+
+		{% block content_two %}
+
+		{% endblock %}
+	</div>
+	
+</body>
+</html>

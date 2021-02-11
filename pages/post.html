@@ -1,0 +1,20 @@
+{% extends "pages/base.html" %}
+{% block content_one %}
+<div class="uk-margin-top uk-margin-bottom">
+	<div class="uk-card uk-card-default">
+		<div class="uk-card-header">
+			<h2 class="uk-text-primary uk-margin-small"><a href="{% url 'post' post.slug %}">{{post.title}}</a></h2>
+			<p class="uk-text-meta uk-margin-small">{{post.date}}</p>
+			{% if post.category %}
+			<span>Posted in <a href="{% url 'category' post.category.slug %}">{{post.category}}</a></span>
+			{% endif %}
+		</div>
+		<div class="uk-card-body">
+			{{post.content|safe}}
+			{% for tag in post.tag.all %}
+			<a href="{% url 'tag' tag.slug %}">{{tag}}</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
